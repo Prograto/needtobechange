@@ -68,4 +68,22 @@ document.addEventListener('DOMContentLoaded', function() {
 
     setInterval(changeRole, 3000);
     changingText.classList.add('visible');
+
+    document.querySelectorAll(".read-more").forEach(function (element) {
+        element.addEventListener("click", function () {
+            const hiddenContent = this.previousElementSibling;
+
+            if (hiddenContent.classList.contains("show")) {
+                hiddenContent.classList.remove("show");
+                this.textContent = "Read More";
+            } else {
+                hiddenContent.classList.add("show");
+                this.textContent = "Read Less";
+            }
+        });
+    });
 });
+
+
+
+

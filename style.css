@@ -168,6 +168,15 @@ body {
     animation: fadeIn 2s ease-in-out;
 }
 
+#about {
+    background: linear-gradient(to right, #6a11cb, #2575fc);
+    color: white;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
 @keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
@@ -176,9 +185,10 @@ body {
 .project-card {
     background-color: var(--primary-color);
     padding: 20px;
-    margin: 10px 0;
+    margin: 20px 20px;
     border-radius: 8px;
     color: #ffffff;
+    height: 50%;
     transform: scale(1);
     transition: transform 0.3s;
 }
@@ -186,6 +196,33 @@ body {
 .project-card:hover {
     transform: scale(1.05);
 }
+
+.hidden-content {
+    display: block;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out;
+}
+
+.hidden-content.show {
+    max-height: 500px; /* Adjust as needed */
+    opacity: 1;
+}
+
+.read-more {
+    color: blue;
+    cursor: pointer;
+    font-weight: bold;
+    display: inline-block;
+    margin-left: 5px;
+    transition: color 0.3s;
+}
+
+.read-more:hover {
+    color: darkblue;
+}
+
 
 .btn {
     padding: 10px 20px;
@@ -207,6 +244,15 @@ footer {
     text-align: center;
     background-color: var(--primary-color);
     color: #ffffff;
+}
+
+@media (min-width: 768px){
+    #projects{
+        display: flex;
+        justify-content: space-evenly;
+        height: 50%;
+        width: 100%;
+    }
 }
 
 .fade-in-section {
